@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uns:use_case name="Update a gwt browser applications look and feel on demand." abstract="true" xmlns:uns="http://www.adligo.org/tests4j/run/xml/io/use_cases/v1_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.adligo.org/tests4j/run/xml/io/use_cases/v1_0 
+	../../../../../../../../tests4j.adligo.org/src/org/adligo/tests4j/run/xml/use_cases_v1_0.xsd ">
+  <uns:actor>Developer</uns:actor>
+  <uns:actor>Stylist</uns:actor>
+<uns:step id="1" >
+A Developer or Stylist updates a .css file of a gwt browser application on the server,
+which is parsed by the browser, and the application (through the css.adligo.org api).
+</uns:step>
+<uns:step id="2" >
+The Developer or Stylist views the application in a web browser and expects 
+the stylesheet to effect all aspects of the application.
+</uns:step>
+</uns:use_case>

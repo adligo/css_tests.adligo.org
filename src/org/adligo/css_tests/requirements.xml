@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rns:requirements xmlns:rns="http://www.adligo.org/tests4j/run/xml/io/requirements/v1_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.adligo.org/tests4j/run/xml/io/requirements/v1_0 ../../../../../tests4j.adligo.org/src/org/adligo/tests4j/run/xml/requirements_v1_0.xsd ">
+  <rns:actor name="Parser">
+    <rns:description>This a running program which needs to parse a css file, or other
+    	css stream for any reason.  An example of a Parser is a gwt program (i.e. Addoc) 
+    	that needs to resize itself because of a font size, because it uses 
+    	absolute panels and absolute positioning.
+    </rns:description>
+  </rns:actor>
+  <rns:actor name="Operator">
+    <rns:description>This person who is using a gwt application
+    which parsed a style sheet.  A gwt application may have
+    a button or link which allows the Operator to 
+    change the look and feel of the application.
+    </rns:description>
+  </rns:actor>
+  <rns:actor name="Developer" specializes="Operator">
+    <rns:description>This person who is working on a gwt program,
+    		who is using this project to parse css in order to
+    		use the css information for some programming decision 
+    		(see Parser for an example).
+    </rns:description>
+  </rns:actor>
+  <rns:actor name="Stylist" specializes="Operator">
+    <rns:description>This person who is working with a gwt development 
+    	team to make their code look fantastic in multiple browser implementations
+    	(i.e. Firefox, Internet Explorer, Safari).   Stylists may have 
+    	no knowledge of programming, but may be experts in css and
+    	make have rich domain knowledge of how browsers render
+    	differently on operating systems running on different devices.
+    </rns:description>
+  </rns:actor>
+  <rns:use_case_path name="css" path="org.adligo.css_tests.shared.models.use_cases"/>
+  <rns:use_case_path name="css_gwt" path="org.adligo.css_tests.shared.models.use_cases_with_gwt"/>
+  <rns:project name="css_tests.adligo.org">
+    <rns:use_case_path>css</rns:use_case_path>
+    <rns:use_case_path>css_gwt</rns:use_case_path>
+  </rns:project>
+</rns:requirements>

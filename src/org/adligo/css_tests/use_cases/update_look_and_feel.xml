@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uns:use_case name="Update a gwt browser applications look and feel on demand." abstract="true" xmlns:uns="http://www.adligo.org/tests4j/run/xml/io/use_cases/v1_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.adligo.org/tests4j/run/xml/io/use_cases/v1_0 
+	../../../../../../../../tests4j.adligo.org/src/org/adligo/tests4j/run/xml/use_cases_v1_0.xsd ">
+  <uns:actor>Operator</uns:actor>
+<uns:step id="1" >
+A Operator opens a gwt application 
+which is parsed by the browser.  The
+application has a default look and feel
+of bronze.
+</uns:step>
+<uns:step id="2" >
+The Operator selects the blue look and feel 
+from a selection of look and feels, 
+and the look and feel of the 
+application changes to blue.
+</uns:step>
+</uns:use_case>

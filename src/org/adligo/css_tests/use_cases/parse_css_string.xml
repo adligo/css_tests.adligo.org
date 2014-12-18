@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uns:use_case name="Parse CSS String inside of virtual machine (JVM or JavaScript engine)." abstract="true" xmlns:uns="http://www.adligo.org/tests4j/run/xml/io/use_cases/v1_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.adligo.org/tests4j/run/xml/io/use_cases/v1_0 
+	../../../../../../../../tests4j.adligo.org/src/org/adligo/tests4j/run/xml/use_cases_v1_0.xsd ">
+  <uns:actor>Parser</uns:actor>
+<uns:step id="1" abstract="true">
+A Parser calls org.adligo.css.shared.models.StyleSheetParser's with the following parameters;
+css string; 
+(abstraction)
+ 
+expected cs;
+(abstraction) 
+ 
+i18n constants; 
+(abstraction)
+</uns:step>
+<uns:step id="2" abstract="true">
+A Parser querys the StyleSheet (immutable java model class) looking for a the following selector, at rule or property value;
+(abstraction)
+</uns:step>
+</uns:use_case>
