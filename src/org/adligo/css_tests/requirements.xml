@@ -33,7 +33,6 @@
   <rns:use_case_path name="css" path="org.adligo.css_tests.shared.models.use_cases"/>
   <rns:use_case_path name="css_gwt" path="org.adligo.css_tests.shared.models.use_cases_with_gwt"/>
   <rns:project name="css_tests.adligo.org">
-    <rns:use_case_path>css</rns:use_case_path>
-    <rns:use_case_path>css_gwt</rns:use_case_path>
+    <rns:use_case_path>use_cases</rns:use_case_path>
   </rns:project>
 </rns:requirements>

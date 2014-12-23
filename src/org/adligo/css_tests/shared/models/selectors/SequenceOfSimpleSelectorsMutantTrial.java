@@ -7,6 +7,8 @@ import org.adligo.tests4j.system.shared.trials.SourceFileScope;
 import org.adligo.tests4j.system.shared.trials.Test;
 import org.adligo.tests4j_4mockito.MockitoSourceFileTrial;
 
+import java.util.Collections;
+
 @SourceFileScope (sourceClass=SequenceOfSimpleSelectorsMutant.class,minCoverage=10.0)
 public class SequenceOfSimpleSelectorsMutantTrial extends MockitoSourceFileTrial {
 
@@ -33,5 +35,22 @@ public class SequenceOfSimpleSelectorsMutantTrial extends MockitoSourceFileTrial
     mut = new SequenceOfSimpleSelectorsMutant();
     mut.addPseudoClass(new CssPseudoClass<String>("hey"));
     assertTrue(SequenceOfSimpleSelectorsMutant.hasNonElementNameSimpleSelector(mut));
+  }
+  
+  @SuppressWarnings("boxing")
+  @Test
+  public void testEqualsHashCode() {
+    SequenceOfSimpleSelectorsMutant mut = new SequenceOfSimpleSelectorsMutant();
+    SequenceOfSimpleSelectorsMutant om = new SequenceOfSimpleSelectorsMutant();
+    assertEquals(mut, om);
+    assertEquals(mut.hashCode(), om.hashCode());
+    
+    om.setClassNames(Collections.singleton("someClassName"));
+    assertNotEquals(mut, om);
+    assertNotEquals(mut.hashCode(), om.hashCode());
+    
+    mut.setClassNames(Collections.singleton("someClassName"));
+    assertEquals(mut, om);
+    assertEquals(mut.hashCode(), om.hashCode());
   }
 }

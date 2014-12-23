@@ -7,7 +7,7 @@
 	../../../../../../../../tests4j.adligo.org/src/org/adligo/tests4j/run/xml/use_cases_v1_0.xsd ">
   <uns:actor>Parser</uns:actor>
 <uns:comments>
-This use case was added to allow a gwt application (addoc.adligo.org)
+This use case was added to allow a gwt application (i.e. addoc.adligo.org)
 to query a style sheet in order to obtain the integer from a
 font-size so that it could resize absolute panels.  
 Addoc was using absolute panels for overlaying .png files

@@ -1,4 +1,4 @@
-package org.adligo.css_tests.shared.models.selectors;
+package org.adligo.css_tests.use_case_trials;
 
 import org.adligo.tests4j.run.api.Tests4J;
 import org.adligo.tests4j.system.shared.api.I_Tests4J_TrialList;
@@ -9,13 +9,13 @@ import org.adligo.tests4j_4jacoco.plugin.factories.Tests4J_4MockitoPluginFactory
 import java.util.ArrayList;
 import java.util.List;
 
-public class A_SelectorTrials implements I_Tests4J_TrialList {
+public class A_UseCaseTrials implements I_Tests4J_TrialList {
 
   public static void main(String [] args) {
     try {
       Tests4J_Params params = new Tests4J_Params();
      
-      A_SelectorTrials me = new A_SelectorTrials();
+      A_UseCaseTrials me = new A_UseCaseTrials();
       params.setCoveragePluginFactoryClass(Tests4J_4MockitoPluginFactory.class);
       params.addTrials(me);
       
@@ -28,9 +28,7 @@ public class A_SelectorTrials implements I_Tests4J_TrialList {
   @Override
   public List<Class<? extends I_Trial>> getTrials() {
     List<Class< ? extends I_Trial>> trials = new ArrayList<Class< ? extends I_Trial>>();
-    trials.add(CssNamespaceTrial.class);
-    trials.add(SequenceOfSimpleSelectorsMutantTrial.class);
-    trials.add(SequenceOfSimpleSelectorsParserTrial.class);
+    trials.add(ParseCssStringWithFontSizePxTrial.class);
     return trials;
   }
 
