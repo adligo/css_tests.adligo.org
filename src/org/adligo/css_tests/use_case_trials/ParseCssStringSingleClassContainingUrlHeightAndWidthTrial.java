@@ -19,20 +19,24 @@ import org.adligo.tests4j_4mockito.MockitoApiTrial;
  *
  */
 @PackageScope (packageName="org.adligo.css.shared")
-public class ParseCssStringWithFontSizePxTrial extends MockitoApiTrial {
+public class ParseCssStringSingleClassContainingUrlHeightAndWidthTrial extends MockitoApiTrial {
   StyleSheetParser parser = new StyleSheetParser();
   
   @SuppressWarnings("boxing")
   @Test
   @UseCaseScope (name="Parse CSS String inside of virtual machine (JVM or JavaScript engine) in order to get a font-size px integer.")
   public void testParseCssString() {
-    Selector selector = new Selector(new SequenceOfSimpleSelectors("someClassName"));
-    StyleSheet sheet = parser.parse( ".someClassName { \n" +
-                  "   font-size: 24px;\n" +
-                  "}", new ExpectedCssMutant(selector,
-                      "font-size",
-                      CssType.PX), CssI18nConstants.INSTANCE);
-    int val = sheet.getInteger(selector, "font-size");
-    assertEquals(24, val);
+    Selector selector = new Selector(new SequenceOfSimpleSelectors("menuTitleImage"));
+    StyleSheet sheet = parser.parse( ".menuTitleImage { \n" +
+                  "   height: 90px;\n" +
+                  "   width: 500px;\n" +
+                  "   url: images/beeTitle.png;\n" +
+                  "}", null, CssI18nConstants.INSTANCE);
+    String val = sheet.getValue(selector, "height");
+    assertEquals("90px", val);
+    String width = sheet.getValue(selector, "width");
+    assertEquals("500px", width);
+    String url = sheet.getValue(selector, "url");
+    assertEquals("images/beeTitle.png", url);
   }
 }

@@ -28,7 +28,11 @@ public class A_UseCaseTrials implements I_Tests4J_TrialList {
   @Override
   public List<Class<? extends I_Trial>> getTrials() {
     List<Class< ? extends I_Trial>> trials = new ArrayList<Class< ? extends I_Trial>>();
+    trials.add(ParseCssStringSingleClassContainingUrlHeightAndWidthTrial.class);
+    trials.add(ParseCssStringTwoClassesContainingUrlHeightAndWidthTrial.class);
     trials.add(ParseCssStringWithFontSizePxTrial.class);
+    trials.add(ParseCssStringWithStarCommentAndFontSizePxTrial.class);
+    
     return trials;
   }
 

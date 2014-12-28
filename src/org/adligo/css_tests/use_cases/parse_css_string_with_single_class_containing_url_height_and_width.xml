@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uns:use_case name=
+"Parse CSS String inside of virtual machine (JVM or JavaScript engine) with a url, height and width in a single class." 
+	xmlns:uns="http://www.adligo.org/tests4j/run/xml/io/use_cases/v1_0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.adligo.org/tests4j/run/xml/io/use_cases/v1_0 
+	../../../../../../../../tests4j.adligo.org/src/org/adligo/tests4j/run/xml/use_cases_v1_0.xsd ">
+  <uns:actor>Parser</uns:actor>
+<uns:comments>
+This use case was added to allow a gwt application (i.e. addoc.adligo.org)
+to query a style sheet in order to obtain the integer from a
+font-size so that it could resize absolute panels.  
+Addoc was using absolute panels for overlaying .png files
+with alpha layers (transparent pixels) over
+background-color styles in OmniWeb (old version of Safari).  
+</uns:comments>
+<uns:step id="1" >
+A Parser calls org.adligo.css.shared.models.StyleSheetParser's with the following parameters;
+css string; 
+.menuTitleImage {
+	height: 90px;
+	width: 500px;
+	url: images/beeTitle.png;
+}
+ 
+expected cs;
+null
+ 
+i18n constants; 
+English
+</uns:step>
+<uns:step id="2" >
+A Parser querys the StyleSheet (immutable java model class) looking for a the following selector, at rule or property value;
+What is the url of the menuTitleImage class?
+What is the width of the menuTitleImage class?
+What is the height of the menuTitleImage class?
+</uns:step>
+</uns:use_case>

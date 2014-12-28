@@ -19,15 +19,18 @@ import org.adligo.tests4j_4mockito.MockitoApiTrial;
  *
  */
 @PackageScope (packageName="org.adligo.css.shared")
-public class ParseCssStringWithFontSizePxTrial extends MockitoApiTrial {
+public class ParseCssStringWithStarCommentAndFontSizePxTrial extends MockitoApiTrial {
   StyleSheetParser parser = new StyleSheetParser();
   
   @SuppressWarnings("boxing")
   @Test
-  @UseCaseScope (name="Parse CSS String inside of virtual machine (JVM or JavaScript engine) in order to get a font-size px integer.")
+  @UseCaseScope (name="Parse CSS String with a comment (/* blah */) inside of virtual machine (JVM or JavaScript engine) in order to get a font-size px integer.")
   public void testParseCssString() {
     Selector selector = new Selector(new SequenceOfSimpleSelectors("someClassName"));
-    StyleSheet sheet = parser.parse( ".someClassName { \n" +
+    StyleSheet sheet = parser.parse( "/* \n"
+        + " blah \n"
+        + "*/ \n"
+        + ".someClassName { \n" +
                   "   font-size: 24px;\n" +
                   "}", new ExpectedCssMutant(selector,
                       "font-size",

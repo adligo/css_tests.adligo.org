@@ -1,4 +1,4 @@
-package org.adligo.css_tests.use_case_trials;
+package org.adligo.css_tests.shared.models.selectors;
 
 import org.adligo.css.shared.models.CssType;
 import org.adligo.css.shared.models.ExpectedCssMutant;
@@ -25,7 +25,7 @@ public class ParseCssStringWithFontSizePxTrial extends MockitoApiTrial {
   @SuppressWarnings("boxing")
   @Test
   @UseCaseScope (name="Parse CSS String inside of virtual machine (JVM or JavaScript engine) in order to get a font-size px integer.")
-  public void testParseCssString() {
+  public void testParseCssStringWithFontSizePx() {
     Selector selector = new Selector(new SequenceOfSimpleSelectors("someClassName"));
     StyleSheet sheet = parser.parse( ".someClassName { \n" +
                   "   font-size: 24px;\n" +
