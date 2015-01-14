@@ -2,7 +2,7 @@ package org.adligo.css_tests.shared.models.selectors;
 
 import org.adligo.css.shared.models.selectors.CssNamespace;
 import org.adligo.css.shared.models.selectors.CssNamespaceType;
-import org.adligo.tests4j.shared.asserts.common.ExpectedThrownData;
+import org.adligo.tests4j.shared.asserts.common.ExpectedThrowable;
 import org.adligo.tests4j.shared.asserts.common.I_Thrower;
 import org.adligo.tests4j.system.shared.trials.SourceFileScope;
 import org.adligo.tests4j.system.shared.trials.Test;
@@ -13,7 +13,7 @@ public class CssNamespaceTrial extends MockitoSourceFileTrial {
 
   @Test
   public void testConstructors() {
-    assertThrown(new ExpectedThrownData(
+    assertThrown(new ExpectedThrowable(
         new IllegalArgumentException(
             CssNamespace.NAMED_CSS_NAMESPACE_MUST_USE_THE_STRING_NAME_CONSTRUCTOR)),
         new I_Thrower() {
